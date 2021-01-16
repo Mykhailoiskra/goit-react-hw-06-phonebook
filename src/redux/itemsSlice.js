@@ -8,7 +8,7 @@ const itemsSlice = createSlice({
     addContact: {
       reducer(state, { payload }) {
         if (!state.find((contact) => contact.name === payload.name)) {
-          state.push(payload);
+          state.unshift(payload);
         } else {
           alert(`${payload.name} is already in the list`);
           return state;
